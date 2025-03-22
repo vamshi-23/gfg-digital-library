@@ -9,5 +9,4 @@ class DigitalLibraryGfGApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

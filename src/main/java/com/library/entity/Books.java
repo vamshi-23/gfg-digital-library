@@ -1,62 +1,28 @@
 package com.library.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name="myBooks")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Books {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name="book_id")
 	private int bid;
+	@Column(name="book_name")
 	private String bname;
+	@Column(name="book_author")
 	private String bauthor;
+	@Column(name="book_publication_year")
 	private String bpulicationyear;
+	@Column(name="book_type")
 	private String btype;
-	public Books() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Books(int bid, String bname, String bauthor, String bpulicationyear, String btype) {
-		super();
-		this.bid = bid;
-		this.bname = bname;
-		this.bauthor = bauthor;
-		this.bpulicationyear = bpulicationyear;
-		this.btype = btype;
-	}
-	public int getBid() {
-		return bid;
-	}
-	public void setBid(int bid) {
-		this.bid = bid;
-	}
-	public String getBname() {
-		return bname;
-	}
-	public void setBname(String bname) {
-		this.bname = bname;
-	}
-	public String getBauthor() {
-		return bauthor;
-	}
-	public void setBauthor(String bauthor) {
-		this.bauthor = bauthor;
-	}
-	public String getBpulicationyear() {
-		return bpulicationyear;
-	}
-	public void setBpulicationyear(String bpulicationyear) {
-		this.bpulicationyear = bpulicationyear;
-	}
-	public String getBtype() {
-		return btype;
-	}
-	public void setBtype(String btype) {
-		this.btype = btype;
-	}
-	
 }
